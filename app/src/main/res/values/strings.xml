@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NASA APOD</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_main2">Main2Activity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string-array name="menu_items">
+        <item> Show start page</item>
+        <item>Show by day</item>
+        <item>Show by range</item>
+        <item>Exit</item>
+    </string-array>
+    <string name="set_dates">Set</string>
+    <string name="open_menu">Open</string>
+    <string name="close_menu">Close</string>
+    <string name="server_null_pointer">Sorry, server can be temporary down or updating</string>
+    <string name="show_details">Show more details</string>
+    <string name="set_as_wallpaper">Set as wallpaper</string>
+</resources>
