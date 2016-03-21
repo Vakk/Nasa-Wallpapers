@@ -37,7 +37,9 @@ public class MenuAdapter extends ArrayAdapter<String> {
         try {
             item.setText(getItem(position));
             // TODO: 3/21/16 replace with string from resources
-        } catch (ArrayIndexOutOfBoundsException e){item.setText("Wrong index");};
+        } catch (ArrayIndexOutOfBoundsException e){
+            item.setText(convertView.getResources().getString(R.string.wrong_index));
+        }
         return convertView;
     }
 

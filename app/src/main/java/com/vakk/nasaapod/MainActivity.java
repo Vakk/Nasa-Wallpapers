@@ -91,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
                         DatePickerDialog.OnDateSetListener listener = new DatePickerDialog.OnDateSetListener() {
                             @Override
                             public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                // TODO: 3/21/16 bug in date picker, month is more than chosen month by 1
+                                monthOfYear = monthOfYear+1;
                                 showDay(year, monthOfYear, dayOfMonth);
                             }
                         };

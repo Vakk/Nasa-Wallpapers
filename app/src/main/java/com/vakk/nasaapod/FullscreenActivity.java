@@ -42,6 +42,22 @@ public class FullscreenActivity extends FragmentActivity {
         int position = intent.getIntExtra("position", -1);
         // Page viewer
         pager = (ViewPager) findViewById(R.id.pager);
+        pager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+                currentPosition=position;
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
         pagerAdapter = new MyFragmentPagerAdapter(getSupportFragmentManager());
         pager.setAdapter(pagerAdapter);
         if (position != -1) {
@@ -62,7 +78,6 @@ public class FullscreenActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            currentPosition = position-1;
             // create new fragment
             return PageFragment.newInstance(images.get(position));
         }
@@ -94,12 +109,12 @@ public class FullscreenActivity extends FragmentActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.set_wallpaper) {
+            // TODO: 3/21/16 need string resources
             Toast.makeText(this, "Start download and setup wallpaper...", Toast.LENGTH_LONG).show();
             setWallpaper();
             return true;
         }
         if (id == R.id.show_details) {
-            Toast.makeText(this, "details", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(getApplicationContext(),DetailsActivity.class);
             intent.putExtra("image",images.get(currentPosition));
             startActivity(intent);
