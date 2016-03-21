@@ -53,7 +53,7 @@ public class FullscreenActivity extends FragmentActivity {
      * PAGE VIEWER
      */
     /**
-     * pages adapter... setup items and size
+     * pages adapter... setup items and size of array
      */
     private class MyFragmentPagerAdapter extends FragmentPagerAdapter {
         public MyFragmentPagerAdapter(FragmentManager fm) {
@@ -62,7 +62,7 @@ public class FullscreenActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int position) {
-            currentPosition = position;
+            currentPosition = position-1;
             // create new fragment
             return PageFragment.newInstance(images.get(position));
         }
@@ -100,6 +100,9 @@ public class FullscreenActivity extends FragmentActivity {
         }
         if (id == R.id.show_details) {
             Toast.makeText(this, "details", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(),DetailsActivity.class);
+            intent.putExtra("image",images.get(currentPosition));
+            startActivity(intent);
         }
 
         return super.onOptionsItemSelected(item);

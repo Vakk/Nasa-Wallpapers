@@ -1,20 +1,32 @@
 <resources>
     <string name="app_name">NASA APOD</string>
     <string name="action_settings">Settings</string>
-    <string name="title_activity_main2">Main2Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- menu -->
     <string-array name="menu_items">
         <item> Show start page</item>
         <item>Show by day</item>
         <item>Show by range</item>
         <item>Exit</item>
     </string-array>
+    <string name="title_activity_main2">NASA AAPOD</string>
+    <!-- show images by range -->
     <string name="set_dates">Set</string>
     <string name="open_menu">Open</string>
     <string name="close_menu">Close</string>
     <string name="server_null_pointer">Sorry, server can be temporary down or updating</string>
+    <!-- fullscreen -->
     <string name="show_details">Show more details</string>
     <string name="set_as_wallpaper">Set as wallpaper</string>
+    <string name="date">Date</string>
+    <string name="photographer">Photograph</string>
+    <string name="name">Name</string>
+    <string name="description">Description</string>
+    <string name="url">Url</string>
+    <!-- other -->
+    <string name="wrong_index">Wrong index</string>
+    <!-- current day  -->
+    <string name="current_day_server_response_error">Something is wrong... Server response is invalid.</string>
 </resources>

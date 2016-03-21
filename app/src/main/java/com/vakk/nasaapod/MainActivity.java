@@ -172,8 +172,9 @@ public class MainActivity extends AppCompatActivity {
     public ActionBarDrawerToggle getMyDrawerToggle() {
         return myDrawerToggle;
     }
+
     void getImagePerDate(String date){
-        NasaQuery.getInstance().getCurrentDayPicture(new ResponseListener() {
+        NasaQuery.getInstance().getImageByDay(new ResponseListener() {
             @Override
             public void done(Object obj) {
                 Intent intent = new Intent(getApplicationContext(), FullscreenActivity.class);

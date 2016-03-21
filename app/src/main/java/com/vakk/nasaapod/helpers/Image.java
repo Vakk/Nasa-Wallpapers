@@ -7,16 +7,22 @@ import java.io.Serializable;
 /**
  * Created by vakk on 3/16/16.
  */
+
+/**
+ * Contain all data for image (a.k. name,url, description)
+ */
 public class Image implements Serializable{
     private String name;
     private String url;
     private String description;
     private String date;
-    public Image(String name, String url, String description,String date) {
+    private  String photographer;
+    public Image(String name, String url, String description,String date,String photographer) {
         this.name = name;
         this.url = url;
         this.description = description;
         this.date=date;
+        this.photographer=photographer;
     }
 
     public String getName() {
@@ -47,5 +53,12 @@ public class Image implements Serializable{
     }
     public void setDate(String date){
         this.date=date;
+    }
+
+    public void setPhotographer(String photographer){
+        this.photographer=photographer;
+    }
+    public String getPhotographer(){
+        return photographer;
     }
 }

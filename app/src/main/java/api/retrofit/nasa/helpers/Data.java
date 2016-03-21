@@ -5,13 +5,18 @@ import com.google.gson.annotations.SerializedName;
 /**
  * Created by vakk on 3/16/16.
  */
+
+/**
+ * Server response, contain variables from parsed json
+ */
 public class Data {
+    @SerializedName("copyright")
+    String photographer;
     String date;
     String explanation;
     String title;
     @SerializedName("url")
     String imageUrl;
-
     public Data(String date) {
         this.date = date;
     }
@@ -46,5 +51,9 @@ public class Data {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getPhotographer() {
+        return photographer;
     }
 }

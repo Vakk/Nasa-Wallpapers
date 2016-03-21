@@ -16,15 +16,21 @@ import com.bumptech.glide.Glide;
 import com.vakk.nasaapod.helpers.Image;
 import com.vakk.nasaapod.R;
 
+/**
+ * Full screen image viewer
+ */
 public class PageFragment extends Fragment {
 
     public static final String IMAGE = "image";
     // root view, base view
     View root;
+    // current image
     Image image;
     // show name and description or not
     boolean showMore = false;
+    // image description
     TextView description;
+    // image name
     TextView name;
     public static PageFragment newInstance(Image image) {
         PageFragment pageFragment = new PageFragment();
@@ -96,5 +102,6 @@ public class PageFragment extends Fragment {
             StringBuilder cutDescription = new StringBuilder(image.getDescription().substring(0, 100));
             cutDescription.append("...");
             description.setText(cutDescription.toString());
-        } else description.setText(image.getDescription());}
+        }
+        else description.setText(image.getDescription());}
 }

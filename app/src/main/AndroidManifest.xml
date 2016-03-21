@@ -19,6 +19,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".FullscreenActivity"/>
+        <activity android:name=".DetailsActivity"/>
     </application>
 
 </manifest>

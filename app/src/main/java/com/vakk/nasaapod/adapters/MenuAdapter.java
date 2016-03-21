@@ -36,6 +36,7 @@ public class MenuAdapter extends ArrayAdapter<String> {
         TextView item = (TextView)convertView.findViewById(R.id.item);
         try {
             item.setText(getItem(position));
+            // TODO: 3/21/16 replace with string from resources
         } catch (ArrayIndexOutOfBoundsException e){item.setText("Wrong index");};
         return convertView;
     }

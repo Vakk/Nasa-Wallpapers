@@ -27,8 +27,10 @@ import api.retrofit.nasa.NasaQuery;
  * Created by vakk on 3/16/16.
  */
 public class CurrentDayFragment extends Fragment {
-    public CurrentDayFragment(){};
+    // main view
     View root;
+    public CurrentDayFragment(){}
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -37,8 +39,9 @@ public class CurrentDayFragment extends Fragment {
         setCurrentDayPicture();
         return root;
     }
+
     private void setCurrentDayPicture() {
-        NasaQuery.getInstance().getCurrentDayPicture(new ResponseListener() {
+        NasaQuery.getInstance().getImageByDay(new ResponseListener() {
             @Override
             public void done(Object obj) {
                 Image image = (Image) obj;
@@ -55,10 +58,14 @@ public class CurrentDayFragment extends Fragment {
 
             @Override
             public void fail(Object obj) {
-                Toast.makeText(root.getContext(),"Something is wrong",Toast.LENGTH_SHORT).show();
+                Toast.makeText(
+                        root.getContext(),
+                        root.getResources().getString(R.string.current_day_server_response_error),
+                        Toast.LENGTH_SHORT).show();
             }
-        },null);
+        }, null);
     }
+
         void setDescriptions(Image image){
             TextView name = (TextView) root.findViewById(R.id.name);
             TextView desription = (TextView) root.findViewById(R.id.description);
@@ -69,6 +76,7 @@ public class CurrentDayFragment extends Fragment {
                 desription.setText(cutDescription.toString());
             } else desription.setText(image.getDescription());
     }
+
     void showImage(final Image image){
         ImageView imageView = (ImageView)root.findViewById(R.id.nasa_image);
         Glide

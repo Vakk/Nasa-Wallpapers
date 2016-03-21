@@ -69,12 +69,11 @@ public class ShowByRangeFragment extends Fragment {
     }
     void getImageByRange(String date1,String date2){
         if (checkDate(date1,date2)){
-            NasaQuery.getInstance().getDayByRange(new ResponseListener() {
+            NasaQuery.getInstance().getImageByRange(new ResponseListener() {
                 @Override
                 public void done(Object obj) {
                     list.add((Image)obj);
                     adapter.notifyList();
-                    Toast.makeText(root.getContext(),"received",Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
